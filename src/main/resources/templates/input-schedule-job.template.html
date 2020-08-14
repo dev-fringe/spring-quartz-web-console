@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>작업을 추가/수정합니다.</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form action="save-schedule-job" method="post">
+    <input type="hidden" name="scheduleJobId" value="{{scheduleJobVo.scheduleJobId}}">
+    <input type="hidden" name="keywords" value="{{scheduleJobVo.keywords}}">
+<table>
+    <tr>
+        <td>작업의 이름입니다.<span style="color: red">* </span></td>
+        <td><input  type="text" name="jobName" value="{{scheduleJobVo.jobName}}"></td>
+    </tr>
+    <tr>
+        <td>작업 그룹화.<span style="color: red">* </span></td>
+        <td><input  type="text" name="jobGroup" value="{{scheduleJobVo.jobGroup}}"></td>
+    </tr>
+    <tr>
+        <td>작업 별칭입니다.</td>
+        <td><input type="text" name="aliasName" value="{{scheduleJobVo.aliasName}}"></td>
+    </tr>
+    <tr>
+        <td>시간 표현식입니다.<span style="color: red">* </span></td>
+        <td><input type="text" name="cronExpression" title="如0/10 * * * * ? 每10秒执行一次" value="{{scheduleJobVo.cronExpression}}"></td>
+    </tr>
+    <tr>
+        <td>비동기인지 여부.<span style="color: red">* </span></td>
+        <td><input type="text" name="isSync" title="输入true或者false" value="{{scheduleJobVo.isSync}}"></td>
+    </tr>
+    <tr>
+        <td>작업 설명입니다.</td>
+        <td><input type="text" name="description" value="{{scheduleJobVo.description}}"></td>
+    </tr>
+</table>
+    <button type="submit">확인</button>
+</form>
+</body>
+</html>

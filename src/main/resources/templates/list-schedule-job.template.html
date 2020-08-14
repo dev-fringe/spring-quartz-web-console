@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>작업 목록</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<a href="input-schedule-job">작업을 추가합니다.</a>
+<table border="1">
+    <tr>
+        <td>작업의 이름입니다.</td>
+        <td>작업 별칭입니다.</td>
+        <td>작업 그룹화.</td>
+        <td>트리거.</td>
+        <td>작업 상태입니다.</td>
+        <td>시간 표현식입니다.</td>
+        <td>비동기인지 여부.</td>
+        <td>작업 설명입니다.</td>
+        <td>작업.</td>
+    </tr>
+    {{#scheduleJobVoList}}
+        <tr>
+            <td>{{jobName}}</td>
+            <td>{{aliasName}}</td>
+            <td>{{jobGroup}}</td>
+            <td>{{jobTrigger}}</td>
+            <td>{{status}}</td>
+            <td>{{cronExpression}}</td>
+            <td>{{isSync}}</td>
+            <td>{{description}}</td>
+            <td>
+                <a href="input-schedule-job?scheduleJobId={{scheduleJobId}}">직접 수정 모드</a>
+                <a href="input-schedule-job?scheduleJobId={{scheduleJobId}}&keywords=delUpdate">删除创建方式</a>
+                <a href="delete-schedule-job?scheduleJobId={{scheduleJobId}}">삭제</a>
+                <a href="pause-schedule-job?scheduleJobId={{scheduleJobId}}">일시중지</a>
+                <a href="resume-schedule-job?scheduleJobId={{scheduleJobId}}">다시시작</a>
+                <a href="run-once-schedule-job?scheduleJobId={{scheduleJobId}}">지금실행</a>
+            </td>
+        </tr>
+	{{/scheduleJobVoList}}
+</table>
+<br>
+작업 작업입니다.
+<table border="1">
+    <tr>
+        <td>작업의 이름입니다.</td>
+        <td>작업 별칭입니다.</td>
+        <td>작업 그룹화.</td>
+        <td>트리거.</td>
+        <td>작업 상태입니다.</td>
+        <td>시간 표현식입니다.</td>
+        <td>비동기인지 여부.</td>
+        <td>작업 설명입니다.</td>
+    </tr>
+    {{#executingJobList}}    
+        <tr>
+            <td>{{jobName}}</td>
+            <td>{{aliasName}}</td>
+            <td>{{jobGroup}}</td>
+            <td>{{jobTrigger}}</td>
+            <td>{{status}}</td>
+            <td>{{cronExpression}}</td>
+            <td>{{isSync}}</td>
+            <td>{{desc}}</td>
+        </tr>
+    {{/executingJobList}}    
+</table>
+</body>
+</html>
