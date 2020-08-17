@@ -2,28 +2,26 @@ package dev.fringe.scheduler.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.github.mjeanroy.springmvc.view.mustache.configuration.EnableMustache;
-import com.github.mjeanroy.springmvc.view.mustache.configuration.MustacheProvider;
-
 @ComponentScan(basePackages = "com.dexcoder.demo.*")
 @EnableWebMvc
-@EnableScheduling
+//@EnableScheduling
 @Configuration
-@EnableAspectJAutoProxy
+//@EnableAspectJAutoProxy
+//@EnableMustache
 public class ServletConfig implements WebMvcConfigurer {
-	
-	@EnableMustache(provider = MustacheProvider.AUTO)
-	public class DctmRestMustachViewConfig {
+		
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+		configurer.enable();
 	}
 	
-	   public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-	       configurer.enable();
-	   }
-
+//	@Override
+//	public void configurePathMatch(PathMatchConfigurer configurer) {
+//		UrlPathHelper urlPathHelper = new UrlPathHelper();
+//		urlPathHelper.setAlwaysUseFullPath(true);
+//		configurer.setUrlPathHelper(urlPathHelper);
+//	}
 }
