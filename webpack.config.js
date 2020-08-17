@@ -16,6 +16,6 @@ module.exports = {
 	},
 	output : {
 		filename : 'bundle.js',
-		path : resolve.resolve(__dirname, 'src/main/webapp')
+		path : resolve.resolve(__dirname, 'src/main/webapp/modules')
 	}
 }

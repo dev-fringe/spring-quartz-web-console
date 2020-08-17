@@ -1,10 +1,5 @@
 package dev.fringe.scheduler.config;
 
-import javax.servlet.Filter;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-
-import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -21,12 +16,12 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 		return new Class<?>[] { CommonConfig.class, SchedulerConfig.class};
 	}
 
-	protected Filter[] getServletFilters() {
-		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-		characterEncodingFilter.setEncoding("UTF-8");
-		return new Filter[] { characterEncodingFilter };
-	}
-    public void onStartup(ServletContext servletContext) throws ServletException {
-        super.onStartup(servletContext);
-    }
+//	protected Filter[] getServletFilters() {
+//		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+//		characterEncodingFilter.setEncoding("UTF-8");
+//		return new Filter[] { characterEncodingFilter };
+//	}
+//    public void onStartup(ServletContext servletContext) throws ServletException {
+//        super.onStartup(servletContext);
+//    }
 }
