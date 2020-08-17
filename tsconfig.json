@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "lib": ["dom", "es2017"],    
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es2017",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "noImplicitAny": false,
+    "paths": {
+    }
+  }
+  ,"include": ["src/main/typescript/**/*.ts"]    
+  ,"exclude": ["node_modules"]
+}
+    
