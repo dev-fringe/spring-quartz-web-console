@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,12 +25,12 @@ import lombok.extern.log4j.Log4j2;
 
 @Configuration
 @PropertySource("classpath:app.properties")
-@ComponentScan(basePackages = "com.dexcoder.demo.service")
+@ComponentScan(basePackages = "dev.fringe.scheduler.service")
 @Log4j2
 @EnableTransactionManagement
-@EnableJpaRepositories("com.dexcoder.demo.repositories")
-@EntityScan("com.dexcoder.demo.model")
-@EnableAutoConfiguration
+@EnableJpaRepositories("dev.fringe.scheduler.repositories")
+@EntityScan("dev.fringe.scheduler.model")
+@EnableAutoConfiguration(exclude = MustacheAutoConfiguration.class)
 public class CommonConfig implements InitializingBean{
 	
 	@Autowired Environment env;
