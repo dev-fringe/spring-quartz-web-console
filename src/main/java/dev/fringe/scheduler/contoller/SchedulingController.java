@@ -1,4 +1,4 @@
-package com.dexcoder.demo.controller;
+package dev.fringe.scheduler.contoller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.dexcoder.demo.model.Scheduling;
-import com.dexcoder.demo.service.SchedulingService;
+import dev.fringe.scheduler.model.Scheduling;
+import dev.fringe.scheduler.service.SchedulingService;
 
 @Controller
 public class SchedulingController {
@@ -26,30 +26,31 @@ public class SchedulingController {
 //            scheduleJob.setKeywords(scheduleJobVo.getKeywords());
             model.addAttribute("scheduleJobVo", scheduleJob);
         }
+        model.addAttribute("title", "작업을 추가/수정합니다.");
         return "input-schedule-job";
     }
 
     @RequestMapping(value = "delete-schedule-job", method = RequestMethod.GET)
-    public String delete(Long scheduleJobId) {
-        scheduleJobService.delete(scheduleJobId);
+    public String delete(Long schedulingId) {
+        scheduleJobService.delete(schedulingId);
         return "redirect:list-schedule-job";
     }
 
     @RequestMapping(value = "run-once-schedule-job", method = RequestMethod.GET)
-    public String run(Long scheduleJobId) {
-        scheduleJobService.runOnce(scheduleJobId);
+    public String run(Long schedulingId) {
+        scheduleJobService.runOnce(schedulingId);
         return "redirect:list-schedule-job";
     }
 
     @RequestMapping(value = "pause-schedule-job", method = RequestMethod.GET)
-    public String pause(Long scheduleJobId) {
-        scheduleJobService.pauseJob(scheduleJobId);
+    public String pause(Long schedulingId) {
+        scheduleJobService.pauseJob(schedulingId);
         return "redirect:list-schedule-job";
     }
 
     @RequestMapping(value = "resume-schedule-job", method = RequestMethod.GET)
-    public String resume(Long scheduleJobId) {
-        scheduleJobService.resumeJob(scheduleJobId);
+    public String resume(Long schedulingId) {
+        scheduleJobService.resumeJob(schedulingId);
         return "redirect:list-schedule-job";
     }
 
@@ -70,6 +71,7 @@ public class SchedulingController {
     public String list(Scheduling scheduleJobVo, Model model) {
         model.addAttribute("scheduleJobVoList", scheduleJobService.queryList(scheduleJobVo));
         model.addAttribute("executingJobList", scheduleJobService.queryExecutingJobList());
+        model.addAttribute("title", "작업 목록");
         return "list-schedule-job";
     }
 

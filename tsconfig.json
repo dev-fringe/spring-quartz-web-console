@@ -14,9 +14,11 @@
     "noUnusedLocals": false,
     "noImplicitAny": false,
     "paths": {
+      "@styles/*": ["src/main/resources/css/*"],
+      "@root/*": ["./"]
     }
   }
-  ,"include": ["src/main/typescript/**/*.ts"]    
+  ,"include": ["src/main/typescript/**/*.ts",  "src/main/resources/css/*"]    
   ,"exclude": ["node_modules"]
 }
     

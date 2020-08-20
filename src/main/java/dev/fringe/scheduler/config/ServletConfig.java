@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@ComponentScan(basePackages = "com.dexcoder.demo.*")
+@ComponentScan(basePackages = "dev.fringe.scheduler.*")
 @EnableWebMvc
 //@EnableScheduling
 @Configuration

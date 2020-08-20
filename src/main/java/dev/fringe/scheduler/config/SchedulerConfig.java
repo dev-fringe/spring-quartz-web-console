@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
-import com.dexcoder.demo.quartz.JobFactoryConfiguration;
+import dev.fringe.scheduler.quartz.JobFactoryConfiguration;
 
 @Configuration
 public class SchedulerConfig {

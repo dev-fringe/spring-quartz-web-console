@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>작업 목록</title>
-    <meta charset="UTF-8">
-</head>
-<body>
+<style>
+td {
+	border: 1px solid #999;
+	padding: 0.1em 1em;
+}
+
+table {
+	border-collapse: collapse;
+}
+</style>
 <a href="input-schedule-job">작업을 추가합니다.</a>
-<table border="1">
+<table>
     <tr>
         <td>작업의 이름입니다.</td>
         <td>작업 별칭입니다.</td>
@@ -29,19 +32,19 @@
             <td>{{isSync}}</td>
             <td>{{description}}</td>
             <td>
-                <a href="input-schedule-job?scheduleJobId={{scheduleJobId}}">직접 수정 모드</a>
-                <a href="input-schedule-job?scheduleJobId={{scheduleJobId}}&keywords=delUpdate">删除创建方式</a>
-                <a href="delete-schedule-job?scheduleJobId={{scheduleJobId}}">삭제</a>
-                <a href="pause-schedule-job?scheduleJobId={{scheduleJobId}}">일시중지</a>
-                <a href="resume-schedule-job?scheduleJobId={{scheduleJobId}}">다시시작</a>
-                <a href="run-once-schedule-job?scheduleJobId={{scheduleJobId}}">지금실행</a>
+                <a href="input-schedule-job?schedulingId={{schedulingId}}">직접 수정 모드</a>
+                <a href="input-schedule-job?schedulingId={{schedulingId}}&keywords=delUpdate">删除创建方式</a>
+                <a href="delete-schedule-job?schedulingId={{schedulingId}}">삭제</a>
+                <a href="pause-schedule-job?schedulingId={{schedulingId}}">일시중지</a>
+                <a href="resume-schedule-job?schedulingId={{schedulingId}}">다시시작</a>
+                <a href="run-once-schedule-job?schedulingId={{schedulingId}}">지금실행</a>
             </td>
         </tr>
 	{{/scheduleJobVoList}}
 </table>
 <br>
 작업 작업입니다.
-<table border="1">
+<table>
     <tr>
         <td>작업의 이름입니다.</td>
         <td>작업 별칭입니다.</td>
@@ -65,5 +68,3 @@
         </tr>
     {{/executingJobList}}    
 </table>
-</body>
-</html>
