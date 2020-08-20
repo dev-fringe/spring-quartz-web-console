@@ -33,7 +33,8 @@ public class UndertowServer {
                 .addListener(new ListenerInfo(ContextLoaderListener.class, new ImmediateInstanceFactory<>(new ContextLoaderListener(context))));
         DeploymentManager manager = Servlets.defaultContainer().addDeployment(servletBuilder);
         manager.deploy();
-        PathHandler path = Handlers.path(Handlers.redirect("/app/index.html")).addPrefixPath("/", manager.start());
+        PathHandler path = Handlers.path(Handlers.redirect("/app/cmd" +
+                "index.html")).addPrefixPath("/", manager.start());
         return Undertow.builder().addHttpListener(80, "0.0.0.0").setHandler(path).build();
     }
 }

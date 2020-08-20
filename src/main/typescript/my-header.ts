@@ -1,33 +1,33 @@
 import { LitElement, html, customElement, property, css } from 'lit-element';
-
+import style from "./Style";
 @customElement('my-header') export class MyHeader extends LitElement {
 	
-//	static styles = [s];
-	static get styles() {return css`
+	static styles = [style];
+	// static get styles() {return css`
 		
-	    p {
-	      font-family: Roboto;
-	      font-size: 16px;
-	      font-weight: 500;
-	    }
-	    .red {
-	      color: red;
-	    }
-	    .blue {
-	      color: blue;
-	    }
-	    .s1 {color: blue; }
-	   em {
-			position: fixed;
-			top: 0em;
-			left: 0em;
-			padding: 0 1em;
-			background: #c00;
-			color: white;
-			font-weight: bold;
-			font: 1em/1.5 arial, helvetica, sana-serif;
-		}
-	  `;}
+	//     p {
+	//       font-family: Roboto;
+	//       font-size: 16px;
+	//       font-weight: 500;
+	//     }
+	//     .red {
+	//       color: red;
+	//     }
+	//     .blue {
+	//       color: blue;
+	//     }
+	//     .s1 {color: blue; }
+	//    em {
+	// 		position: fixed;
+	// 		top: 0em;
+	// 		left: 0em;
+	// 		padding: 0 1em;
+	// 		background: #c00;
+	// 		color: white;
+	// 		font-weight: bold;
+	// 		font: 1em/1.5 arial, helvetica, sana-serif;
+	// 	}
+	//   `;}
 
     @property() foo = {"firstName":"Jayce","lastName":"Hauck","username":"Domenic_Kuhn81","email":"Gladyce.Weber@yahoo.com"};
     @property() bar = {year:1969, month:8}
