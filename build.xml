@@ -1,0 +1,37 @@
+<project name="HelloWorld" basedir="." default="clean">
+    <property name="src.dir"     value="src"/>
+    <property name="build.dir"   value="src/main/webapp/dist"/>
+    <property name="lib.dir" value="src/main/webapp/WEB-INF/lib"/>
+    <property name="template.dir"     value="src/main/resources/templates"/>
+    <property name="jar.file"     value="web-component-1.0.jar"/>
+    <property name="main-class"  value="oata.HelloWorld"/>
+
+    <target name="init">
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${lib.dir}" />
+	</target>
+    <target name="clean" depends="init">
+        <delete dir="${build.dir}" verbose="true"/>
+        <!-- <delete dir="${lib.dir}" verbose="true" file="${jar.file}"/> -->
+    </target>
+	
+    <target name="webpack" depends="clean">
+    	<exec executable="cmd">
+    		<arg value="/c" />
+    		<arg value="webpack"/>
+    	</exec>
+    </target>
+
+    <target name="copy-and-replace" depends="webpack">
+    	<move file="${build.dir}/index.html" tofile="${template.dir}/layout.html" />   	
+		<replace file="${template.dir}/layout.html">
+			<!-- 여기서 partial 으로 바꾼다 -->
+			<replacefilter token="content_template" value="&gt; content"/>
+		</replace> 
+    </target>
+	
+    <target name="dist" depends="copy-and-replace">
+    	<!-- <jar destfile="${lib.dir}/${jar.file}" basedir="${build.dir}" /> -->
+    </target>
+
+</project>

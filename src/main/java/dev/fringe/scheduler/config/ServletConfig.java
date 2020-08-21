@@ -4,6 +4,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @ComponentScan(basePackages = "dev.fringe.scheduler.*")
@@ -17,7 +18,11 @@ public class ServletConfig implements WebMvcConfigurer {
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
 	}
-	
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
+       resourceHandlerRegistry.addResourceHandler("/**").addResourceLocations("/dist/**");
+    }
+
 //	@Override
 //	public void configurePathMatch(PathMatchConfigurer configurer) {
 //		UrlPathHelper urlPathHelper = new UrlPathHelper();
