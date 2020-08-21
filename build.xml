@@ -1,11 +1,18 @@
-<project name="HelloWorld" basedir="." default="clean">
+<project name="q" basedir="." default="clean">
     <property name="src.dir"     value="src"/>
-    <property name="build.dir"   value="src/main/webapp/dist"/>
+    <property name="build.dir"   value="src/main/resources/dist"/>
     <property name="lib.dir" value="src/main/webapp/WEB-INF/lib"/>
     <property name="template.dir"     value="src/main/resources/templates"/>
     <property name="jar.file"     value="web-component-1.0.jar"/>
     <property name="main-class"  value="oata.HelloWorld"/>
 
+    <target name="install npm">
+    	<exec executable="cmd">
+    		<arg value="/c" />
+    		<arg value="npm i"/>
+    	</exec>
+	</target>
+    	
     <target name="init">
         <mkdir dir="${build.dir}" />
         <mkdir dir="${lib.dir}" />

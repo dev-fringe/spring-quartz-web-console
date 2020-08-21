@@ -32,7 +32,7 @@ module.exports = configs.map(config =>
           //   path: resolve.resolve(__dirname, 'dist'),
           // }   
          , output: {
-        	 path: resolve.resolve(__dirname, 'src/main/webapp/dist'),  
+        	 path: resolve.resolve(__dirname, 'src/main/resources/dist'),  
           }
     }),
   );
