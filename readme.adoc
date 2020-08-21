@@ -4,4 +4,4 @@ https://github.com/yijian168168/WorkPlace-Quartz/tree/3872ad649ebeb833707979c755
 
 # version change
 thanks. fun...
-image:diagram.jpg[diagram]
+image:src/main/webapp/diagram.jpg[diagram]
