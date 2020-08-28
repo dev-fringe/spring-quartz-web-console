@@ -1,10 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      steps {
-        echo 'Building..'
-        bat 'mvn clean install -Dmaven.test.skip=true'
+    stage('Java Build') {
+      parallel {
+        stage('Java Build') {
+          steps {
+            echo 'Building..'
+            bat 'mvn clean install -Dmaven.test.skip=true'
+          }
+        }
+
+        stage('Node Build') {
+          steps {
+            bat 'ant build.xml dist'
+          }
+        }
+
       }
     }
 
