@@ -5,7 +5,7 @@ stages {
 stage("Build") {
 steps {
 echo "Building.."
-  sh "mvn clean install -Dlicense.skip=true"
+  cmd /c "mvn clean install -Dlicense.skip=true"
 }
 }
 stage("Test") {
