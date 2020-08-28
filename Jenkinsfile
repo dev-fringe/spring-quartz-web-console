@@ -12,7 +12,7 @@ pipeline {
 
         stage('Node Build') {
           steps {
-            bat 'ant build.xml dist'
+            bat 'ant dist'
           }
         }
 
