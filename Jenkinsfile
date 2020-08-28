@@ -12,7 +12,7 @@ pipeline {
 
         stage('Node Build') {
           steps {
-            bat 'ant dist'
+            bat 'ant install-npm dist'
           }
         }
 
