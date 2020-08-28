@@ -6,7 +6,7 @@
     <property name="jar.file"     value="web-component-1.0.jar"/>
     <property name="main-class"  value="oata.HelloWorld"/>
 
-    <target name="install npm">
+    <target name="install-npm">
     	<exec executable="cmd">
     		<arg value="/c" />
     		<arg value="npm i"/>
