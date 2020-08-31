@@ -5,3 +5,6 @@ https://github.com/yijian168168/WorkPlace-Quartz/tree/3872ad649ebeb833707979c755
 # version change
 thanks. fun...
 image:diagram.jpg[diagram]
+
+# applcation build - node
+image:spring-quartz-web-console-pipeline.png[application-build]
