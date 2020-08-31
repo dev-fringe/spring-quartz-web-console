@@ -18,9 +18,8 @@ public class ServletConfig implements WebMvcConfigurer {
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
 	}
-    @Override
     public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
-       resourceHandlerRegistry.addResourceHandler("/**").addResourceLocations("/dist/**");
+       resourceHandlerRegistry.addResourceHandler("/**").addResourceLocations("classpath:/dist/");
     }
 
 //	@Override

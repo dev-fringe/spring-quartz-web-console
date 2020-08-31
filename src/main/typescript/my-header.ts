@@ -1,5 +1,6 @@
 import { LitElement, html, customElement, property, css } from 'lit-element';
 import style from "./Style";
+import '@polymer/app-layout';
 @customElement('my-header') export class MyHeader extends LitElement {
 	
 	static styles = [style];
@@ -33,8 +34,27 @@ import style from "./Style";
     @property() bar = {year:1969, month:8}
 
     render() { return html`
+    <style>
+      app-header {
+        background-color: #00897B;
+        color: #fff;
+      }
+      paper-icon-button {
+        --paper-icon-button-ink-color: white;
+      }
+      app-drawer-layout:not([narrow]) [drawer-toggle] {
+        display: none;
+      }
+    </style>
+
 		<em>development enviorment - DEV</em>
-	    <h1 class="s1">${this.foo.firstName}</h1>
+		<h1 class="s1">${this.foo.firstName}</h1>
+		<app-header reveals>
+        <app-toolbar>
+          <div main-title>My app</div>
+        </app-toolbar>
+      </app-header>
+      <app-drawer id="drawer" swipe-open></app-drawer>
 	`;}
 //	    <h2>${this.foo.lastName}</h2>
 //	    <p>${this.foo.email}</p>

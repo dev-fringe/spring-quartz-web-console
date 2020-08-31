@@ -1,2 +1,10 @@
 # Project exclude paths
 /target/
+/spring-quartz-web-console.iml
+/package-lock.json
+/.tern-project
+/.project
+/.classpath
+/.idea/
+/.settings/
+/node_modules/
